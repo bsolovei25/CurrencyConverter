@@ -1,0 +1,28 @@
+<div class="header">
+  <div class="header__welcome-message"><span class="header__welcome-message__rate-title">Курс валют </span> <span
+    class="header__welcome-message__date">{{currentDate | date: 'dd-MMMM-yyyy'}}</span></div>
+  <div class="currency">
+    <div class="currency__eur">
+      <div class="currency__eur__logo"><img class="eu-flag" src="../../../assets/eu-flag.png" alt="european-union-flag">
+      </div>
+      <div class="currency__eur__fromCurrency">
+        <div class="from-label">From</div>
+        <div class="currency">EUR</div>
+      </div>
+      <div class="currency__eur__rate">
+        <div class="latest-rate">1 EUR = {{ this.USDtoUAHRate }} UAH</div>
+      </div>
+    </div>
+    <div class="currency__usd">
+      <div class="currency__usd__logo"><img class="eu-flag" src="../../../assets/american-flag.png" alt="american-flag">
+      </div>
+      <div class="currency__usd__fromCurrency">
+        <div class="from-label">From</div>
+        <div class="currency">USD</div>
+      </div>
+      <div class="currency__usd__rate">
+        <div class="latest-rate">1 USD = {{ this.EURtoUAHRate }} UAH</div>
+      </div>
+    </div>
+  </div>
+</div>

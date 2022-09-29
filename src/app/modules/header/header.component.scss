@@ -1,0 +1,82 @@
+@import '../core-colors/_colors.scss';
+@import '../core-colors/themes-colors.css';
+
+.header {
+  background-color: $main-header-color;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  &__welcome-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $cards-body-color;
+    font-size: 60px;
+    line-height: 120%;
+
+    &__rate-title {
+      margin-right: 10px;
+      color: $black-color;
+    }
+
+    &__date {
+      color: $header-welcome-text;
+    }
+  }
+
+  .currency {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__eur, &__usd {
+      background-color: $cards-body-color;
+      margin-left: 100px;
+      min-width: 100px;
+      min-height: 50px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 1px 5px 1px rgba($color__main--shade1, 0.3);
+      border: 1.5px solid $color__input--border;
+      border-radius: 6px;
+      margin-top: 20px;
+
+      &__logo {
+        position: relative;
+
+        .eu-flag {
+          width: 60px;
+        }
+      }
+
+      &__fromCurrency {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+
+        .from-label {
+          color: $from-color;
+          font-size: 12px;
+        }
+
+        .currency {
+          font-size: 18px;
+          font-weight: 500;
+        }
+      }
+
+      &__rate {
+        margin: 0 15px;
+      }
+    }
+
+    &__usd {
+      margin-bottom: 20px;
+    }
+  }
+}

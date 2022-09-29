@@ -1,0 +1,22 @@
+<div class="exchange">
+  <div class="exchange__left-block">
+    <input class="inputBox1" type="number" (keyup)="convertCurrency($event)" [(ngModel)]="inputOptionBox1" required>
+    <select class="selectBox1" (change)="optionDropDownChange($event)" [(ngModel)]="selectedOptionBox1">
+      <option *ngFor="let o of options">
+        {{o.name}}
+      </option>
+    </select>
+  </div>
+  <div class="exchange__right-block">
+    <input class="inputBox2" type="number" (keyup)="convertCurrency($event)" required [(ngModel)]="inputOptionBox2">
+    <select class="selectBox2" (change)="optionDropDownChange($event)" [(ngModel)]="selectedOptionBox2">
+      <option *ngFor="let o of options">
+        {{o.name}}
+      </option>
+    </select>
+  </div>
+
+  <div class="loader" *ngIf="isContentLoaded">
+    <span class="spinner"></span>
+  </div>
+</div>
