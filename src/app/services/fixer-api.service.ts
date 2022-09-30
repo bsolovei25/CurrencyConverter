@@ -44,7 +44,7 @@ export class FixerApiService {
   }
 
   initializeToken(): void {
-    this.tokenId = 'q6xt2SucIYYQyhDRJleBlHG7AjYRCZH4';
+    this.tokenId = 'lSxHb82KxiHDvyfoAD1AnxGtmJMNnUai';
     this.headers = new HttpHeaders().set('apikey', this.tokenId);
   }
 
