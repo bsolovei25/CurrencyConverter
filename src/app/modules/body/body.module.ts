@@ -4,13 +4,14 @@ import {BodyComponent} from "./body.component";
 import {BodyRoutingModule} from "./body-routing.module";
 import {ExchangeComponent} from "../exchange/exchange.component";
 import {HeaderComponent} from "../header/header.component";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
     CommonModule,
     BodyRoutingModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [BodyComponent, ExchangeComponent, HeaderComponent]
 })

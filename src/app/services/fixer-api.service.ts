@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {IExchangeCourse} from "../interfaces/exchange-course";
+import {IExchangeCourse, IGetToUAHCourse} from "../interfaces/exchange-course";
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {combineLatest, Observable, of} from 'rxjs';
 import {catchError} from "rxjs/operators";
@@ -12,16 +12,13 @@ export class FixerApiService {
   constructor(private http: HttpClient) {
   }
 
-  ngOnInit() {
-  }
-
   private tokenId: string = '';
   private headers: HttpHeaders;
   private USDtoUAH: string = "https://api.apilayer.com/fixer/latest?symbols=UAH&base=USD"
   private EURtoUAH: string = "https://api.apilayer.com/fixer/latest?symbols=UAH&base=EUR"
 
   private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
+    return (error: Error): Observable<T> => {
       console.error(error);
       return of(result as T);
     };
@@ -35,11 +32,11 @@ export class FixerApiService {
     )
   }
 
-  getAllExchangeToUAH(): Observable<any> {
+  getAllExchangeToUAH(): Observable<IGetToUAHCourse[]> {
     this.initializeToken();
     return combineLatest(
-      this.http.get<IExchangeCourse>(this.USDtoUAH, {headers: this.headers}),
-      this.http.get<IExchangeCourse>(this.EURtoUAH, {headers: this.headers})
+      this.http.get<IGetToUAHCourse>(this.USDtoUAH, {headers: this.headers}),
+      this.http.get<IGetToUAHCourse>(this.EURtoUAH, {headers: this.headers})
     )
   }
 

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {FixerApiService} from "../../services/fixer-api.service";
-import {IGetToUAHCourse} from "../../interfaces/exchange-course";
 
 @Component({
   selector: 'app-header',
@@ -9,8 +8,8 @@ import {IGetToUAHCourse} from "../../interfaces/exchange-course";
 })
 export class HeaderComponent implements OnInit {
 
-  public USDtoUAHRate:IGetToUAHCourse;
-  public EURtoUAHRate: IGetToUAHCourse;
+  public USDtoUAHRate:number;
+  public EURtoUAHRate: number;
   public currentDate:number = Date.now();
 
   constructor(private fixerApiInstance : FixerApiService) {
